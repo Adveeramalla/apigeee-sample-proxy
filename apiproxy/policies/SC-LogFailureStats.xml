@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<StatisticsCollector async="true" continueOnError="false" enabled="true" name="SC-LogFailureStats">
+    <DisplayName>SC-LogFailureStats</DisplayName>
+    <Statistics>
+        <Statistic name="validateAddress_appId" ref="appId" type="string">null</Statistic>
+        <Statistic name="validateAddress_statusCode" ref="error.status.code" type="string">null</Statistic>
+    </Statistics>
+</StatisticsCollector>

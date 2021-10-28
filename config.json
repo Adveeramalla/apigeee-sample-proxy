@@ -1,0 +1,58 @@
+{
+   "configurations":[
+     {
+       "name":"dev",
+       "policies": [ { "name": "default.xml" } ],
+       "proxies":[ ],
+       "targets":[ ]
+     },
+	 {
+       "name":"test",
+       "policies": [ { "name": "default.xml" } ],
+       "proxies":[ ],
+       "targets":[ ]
+     },
+     {
+       "name":"qa",
+       "policies": [ { "name": "default.xml" } ],
+       "proxies":[ ],
+       "targets":[ ]
+      },
+     {
+       "name":"qa1",
+       "policies": [ { "name": "default.xml" } ],
+       "proxies":[ ],
+       "targets":[ ]
+     },
+     {
+       "name":"qa2",
+       "policies": [ { "name": "default.xml" } ],
+       "proxies":[ ],
+       "targets":[ ]
+     },
+     {
+       "name":"qa3",
+       "policies": [ { "name": "default.xml" } ],
+       "proxies":[ ],
+       "targets":[ ]
+     },
+     {
+       "name":"stress",
+       "policies": [ { "name": "default.xml" } ],
+       "proxies":[ ],
+       "targets":[ ]
+     },
+     {
+       "name":"preview",
+       "policies": [ { "name": "default.xml" } ],
+       "proxies":[ ],
+       "targets":[ ]
+     },
+     {
+       "name":"prod",
+       "policies": [ { "name": "default.xml" } ],
+       "proxies":[ ],
+       "targets":[ ]
+     }
+   ]
+}

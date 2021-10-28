@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <DefaultFaultRule name="DefaultFaultRule">
+        <Step>
+            <Name>SC-LogFailureStats</Name>
+        </Step>
+        <Step>
+            <Name>AM-DefaultFaultMessage</Name>
+            <Condition>raisefault.failed != true</Condition>
+        </Step>
+        <Step>
+            <Name>SC-HTTPSplunkLogger</Name>
+        </Step>
+    </DefaultFaultRule>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>SC-HTTPSplunkLogger</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <Flows>
+        <Flow name="AddressValidate">
+            <Description>AddressValidate_POST</Description>
+            <Request>
+                <Step>
+                    <Name>setContextVariables</Name>
+                </Step>
+                <Step>
+                    <Condition>request.header.authorization = null</Condition>
+                    <Name>RF-MissingHeader</Name>
+                </Step>
+                <Step>
+                    <Name>EV-JWT</Name>
+                </Step>
+                <Step>
+                    <Name>KVM-GetKey</Name>
+                </Step>
+                <Step>
+                    <Name>Spike-Arrest</Name>
+                </Step>
+                <Step>
+                    <Name>Verify-JWT</Name>
+                </Step>
+                <Step>
+                    <Condition>(jwt.Verify-JWT.valid is false)</Condition>
+                    <Name>RF-Unauthorized</Name>
+                </Step>
+                <Step>
+                    <Condition>(jwt.Verify-JWT.seconds_remaining LesserThan 1) or (jwt.Verify-JWT.seconds_remaining  &gt;= JWT_TimeOut)</Condition>
+                    <Name>RF-Invalid-exp</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>SC-ValidateAddress</Name>
+                </Step>
+                <Step>
+                    <Condition>(response.status.code = null) </Condition>
+                    <Name>RF-ServiceCalOut500-Error</Name>
+                </Step>
+                <Step>
+                    <Condition>(response.status.code != "200") and (response.status.code &gt; 0) </Condition>
+                    <Name>RF-ServiceCalOut-Error</Name>
+                </Step>
+                <Step>
+                    <Name>SC-LogSuccessStats</Name>
+                </Step>
+                <Step>
+                    <Name>SC-HTTPSplunkLogger</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/validate") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="RF-unknownRequest">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>RF-MethodNotAllowed</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/**")</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <HTTPProxyConnection>
+        <BasePath>/v1/addressValidation</BasePath>
+        <VirtualHost>secure</VirtualHost>
+        <VirtualHost>default</VirtualHost>
+        <!--<VirtualHost>texas</VirtualHost>-->
+    </HTTPProxyConnection>
+    <RouteRule name="noroute"/>
+    <!--  <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule> -->
+</ProxyEndpoint>

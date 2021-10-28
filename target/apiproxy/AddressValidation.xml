@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><APIProxy name="AddressValidation" revision="24">
+    <Basepaths>/validate</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1598356269890</CreatedAt>
+    <CreatedBy>srvemulapally@deloitte.com</CreatedBy>
+    <Description>Melissa Address Validation API</Description>
+    <DisplayName>Address-Validation-API</DisplayName>
+    <LastModifiedAt>1598356269890</LastModifiedAt>
+    <LastModifiedBy>srvemulapally@deloitte.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:a71aa0b759dcee12f51a53f0feeeb3db8505b98197894965e8b64495fe2dce9da75124dcac6378d9cfd78285d842fdac4180857f57c6454da69b6679999e315c</ManifestVersion>
+    <Policies>
+        <Policy>AM-DefaultFaultMessage</Policy>
+        <Policy>EV-JWT</Policy>
+        <Policy>KVM-GetKey</Policy>
+        <Policy>RF-Invalid-exp</Policy>
+        <Policy>RF-MethodNotAllowed</Policy>
+        <Policy>RF-MissingHeader</Policy>
+        <Policy>RF-ServiceCalOut-Error</Policy>
+        <Policy>RF-ServiceCalOut500-Error</Policy>
+        <Policy>RF-Unauthorized</Policy>
+        <Policy>SC-HTTPSplunkLogger</Policy>
+        <Policy>SC-LogFailureStats</Policy>
+        <Policy>SC-LogSuccessStats</Policy>
+        <Policy>SC-ValidateAddress</Policy>
+        <Policy>Spike-Arrest</Policy>
+        <Policy>Verify-JWT</Policy>
+        <Policy>setContextVariables</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>openapi://association.json</Resource>
+        <Resource>jsc://logger.js</Resource>
+        <Resource>jsc://setContextVariables.js</Resource>
+    </Resources>
+    <Spec/>
+    <TargetServers/>
+    <TargetEndpoints/>
+</APIProxy>

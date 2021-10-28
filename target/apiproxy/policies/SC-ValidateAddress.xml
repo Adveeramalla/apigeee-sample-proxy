@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout async="false" continueOnError="false" enabled="true" name="SC-ValidateAddress">
+    <DisplayName>SC-ValidateAddress</DisplayName>
+    <Properties/>
+    <Request clearPayload="true" variable="SCRequest">
+        <Set>
+            <Verb>POST</Verb>
+            <Path>{httpTarget_path}</Path>
+            <Payload contentType="application/json">{request.content}</Payload>
+        </Set>
+        <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    </Request>
+    <Response>response</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://{httpTarget_url}</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

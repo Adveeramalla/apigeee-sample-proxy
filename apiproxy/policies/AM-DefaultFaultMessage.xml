@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AM-DefaultFaultMessage">
+    <DisplayName>AM-DefaultFaultMessage</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Set>
+        <Payload contentType="application/json" variablePrefix="%" variableSuffix="#">
+            { 
+            "status": "ERROR",
+			 "referenceId": "%referenceId#",
+             "errorCode": "%message.status.code#", 
+             "errorDescription": "Message: %error.message#. Error reason: %error.reason.phrase#. ServiceCalloutResponse: %ServiceCallout.response#. FaultName: %fault.name#. FaultType: %fault.type#. falutCategory: %fault.category#"
+            }</Payload>
+        <StatusCode>{message.status.code}</StatusCode>
+        <ReasonPhrase>{message.reason.phrase}</ReasonPhrase>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

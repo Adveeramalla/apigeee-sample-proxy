@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest name="manifest">
+    <Policies>
+        <VersionInfo resourceName="AM-DefaultFaultMessage" version="SHA-512:b85bd008a5db9e7b531ca5c6f07ffbddca785ebfd013e0a792b3bc7d2cea05fe5bd2eaf2dadb41c571644f14466ce285393b77e18ea07b1fc8457baf59db7e4c"/>
+        <VersionInfo resourceName="EV-JWT" version="SHA-512:433d42cce749999a88b7562b0212cf6698d91230d08a213b912ab1e5bd8baa45744bf1a5c185a9280b5fc30c116fe4943a86682dddcb04b1ba9c14df72e7e31a"/>
+        <VersionInfo resourceName="KVM-GetKey" version="SHA-512:e7805b0163f4b31512d267f7eec343675033fb53b22f60263eba36d8008aec891c73adef16105fea2c6c6ed04e13969b76b366ca16009b57457521ddf1c73e4e"/>
+        <VersionInfo resourceName="RF-Invalid-exp" version="SHA-512:e9171a50713f4ff705fdc7c10e5e1327a326461485971d3e5f209b43f1d43b5822ccff866c19283e4ca5b10deb2126089d598f29740ab7d12466498534def7cb"/>
+        <VersionInfo resourceName="RF-MethodNotAllowed" version="SHA-512:2f2eb6e5a3bce676b50e86aaed42b05d7abb423e6b8175edb89915c018b3cabafd852d1fff520cfd0886e2bd53f4c1c347163c27a447125d3b53362d165b7145"/>
+        <VersionInfo resourceName="RF-MissingHeader" version="SHA-512:f4d0f73ba780be4c0ba6ba36fd1932b4843d20b9798ab295850c65b34da6ac848b24dffbbaccd4c2a5f37a2bea6d4c7e1392cffdfb98eff9bf81fa74f95fd45f"/>
+        <VersionInfo resourceName="RF-ServiceCalOut-Error" version="SHA-512:e97f7c8d6d6a7245b10a0dac330043c0421198c901383c3b97279e92cea53d3a93c3f49c5cb55db221c048ec111a596a6034243dcf833ce4bccdfebafa658705"/>
+        <VersionInfo resourceName="RF-ServiceCalOut500-Error" version="SHA-512:0af864f24447edbf226f9713ba358e5d2dd0b759180f2610d203f1b6f97031ae625de04e4a3e036a2dd9976041501421564cb7d95dda911e2bd98b3ee5a326ed"/>
+        <VersionInfo resourceName="RF-Unauthorized" version="SHA-512:e47ba3d6f70cf96f4bb8ce6e85cf32dd67ed064a8489c33949b23e42572aed0c7ba9131478aba3c870914ba4a004a08326cbe347698c6555934481238680f9e5"/>
+        <VersionInfo resourceName="SC-HTTPSplunkLogger" version="SHA-512:9b93c5da3d66079df46b43df64e8d76ab000dd6e0947a0e035d3ef576f58dc52f723ebae0b6c9f225838110b31fc8a1da66bbe3f29b89deee620308f07c3cf7c"/>
+        <VersionInfo resourceName="SC-LogFailureStats" version="SHA-512:8a14f345b3138da4d367f0383a8b9588f32b8fa791a6400d3f7fbf38253d61242d3fb5f2fd762d1361680facc265b875f519c11a85b071440c2b04005aeeaf35"/>
+        <VersionInfo resourceName="SC-LogSuccessStats" version="SHA-512:1636220a1e6950c344e503a3761c4a43cdde55f716ed18d783670da23ef7dc7782efab0b1984f2fb57a409cfca221b71d22eb8cf0423fe771c1d00f2a7ebf3a0"/>
+        <VersionInfo resourceName="SC-ValidateAddress" version="SHA-512:31a472e36fee445c126f90f7f051d683936f60dcbce81bd99aa81d0d18144dee6cffb8e4adc9b0ac1da25037fe0dad989fc8c1475232b5a814409cc58e265fad"/>
+        <VersionInfo resourceName="Spike-Arrest" version="SHA-512:f8c954a884b0fcd8ad5df51823e6d1ed8d4ffc2e05d2488c55e8fedc0e285575f3124918a3ee72350f146592f730634676c08ce23f6b395225349a029e3c17bd"/>
+        <VersionInfo resourceName="Verify-JWT" version="SHA-512:d4047b765ebad503ababa33e3132fa7cd2d6f11264d13594aede720e8984f585b5e531ecec1dc9ac9ca1b855735a1a7ded4c4e63248d01f2e243eb86fb0fa904"/>
+        <VersionInfo resourceName="setContextVariables" version="SHA-512:f848556d1cf2be1a2d9dfe470d8399b06892171641e7cc42e1372826cbf1c30f440485732a60ba38134ecaad84f239d9b2560771d56fc92627489ef474504535"/>
+    </Policies>
+    <ProxyEndpoints>
+        <VersionInfo resourceName="default" version="SHA-512:a882916ac55c09f38998e812d26873e079771f9d891d9b86d3b11c811f32038ccb0ab02798bb69468069cdd2eab81b2737a66fcc20c638c8d9b977bd7a90b8bb"/>
+    </ProxyEndpoints>
+    <Resources>
+        <VersionInfo resourceName="jsc://logger.js" version="SHA-512:ca03fa94aa69bd787b928157fc2cb79ffe9e9b6343cd5cc8ad4a94a0200919fcedf195b48d81cd17e8917bf03f59c6d57942fc85360e37ad288092bc0055cd06"/>
+        <VersionInfo resourceName="jsc://setContextVariables.js" version="SHA-512:b0f3801c73de599a3f17ccbff1bc42cce908beff17e7111bbf1dea41456e509bf86a441405a6934cfc6166da1f8f28435a3a4ac95a85d49163867e23340d9a97"/>
+        <VersionInfo resourceName="openapi://association.json" version="SHA-512:da8ac4ca2802d2ac2f29f5e2c074470d2e74bc8116ba0d542e905834c3c84ac814a5595cf465e67c1ca06e11ec9af814783c3195089fe85ed78962a0ed35d0a2"/>
+    </Resources>
+    <SharedFlows/>
+    <TargetEndpoints/>
+</Manifest>

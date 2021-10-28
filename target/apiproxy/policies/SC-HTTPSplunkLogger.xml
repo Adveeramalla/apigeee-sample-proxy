@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout async="false" continueOnError="false" enabled="true" name="SC-HTTPSplunkLogger">
+    <DisplayName>SC-HTTPSplunkLogger</DisplayName>
+    <Properties/>
+    <Request clearPayload="true" variable="SCRequest">
+        <Set>
+            <Verb>POST</Verb>
+            <Path>/encryptMsg</Path>
+            <Payload contentType="application/json">{message.content}</Payload>
+        </Set>
+        <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    </Request>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://{request.header.Host}/v1/splunk</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

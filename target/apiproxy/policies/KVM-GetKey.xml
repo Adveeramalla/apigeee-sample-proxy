@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="KVM-GetKey" mapIdentifier="AddressValidate">
+    <DisplayName>KVM-GetKey</DisplayName>
+    <FaultRules/>
+    <ExclusiveCache>false</ExclusiveCache>
+    <ExpiryTimeInSecs>-1</ExpiryTimeInSecs>
+    <Get assignTo="private.secretkey">
+        <Key>
+            <Parameter ref="appId"/>
+        </Key>
+    </Get>
+    <Get assignTo="Rate">
+        <Key>
+            <Parameter>Rate</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="httpTarget_url">
+        <Key>
+            <Parameter>httpTarget_url</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="httpTarget_path">
+        <Key>
+            <Parameter>httpTarget_path</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="JWT_TimeOut">
+        <Key>
+            <Parameter>JWT_TimeOut</Parameter>
+        </Key>
+    </Get>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>

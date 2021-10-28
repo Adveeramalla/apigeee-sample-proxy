@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault async="false" continueOnError="false" enabled="true" name="RF-ServiceCalOut500-Error">
+    <DisplayName>RF-ServiceCalOut500-Error</DisplayName>
+    <FaultResponse>
+        <Set>
+            <Headers/>
+            <Payload contentType="application/json" variablePrefix="%" variableSuffix="#">
+            { 
+            "status" : "ERROR",
+			 "referenceId" : "%referenceId#",
+             "errorCode":"%message.status.code#", 
+             "errorDescription":"%error.reason.phrase#. Unable to connect: %httpTarget_url#"
+            }</Payload>
+            <StatusCode>{error.status.code}</StatusCode>
+            <ReasonPhrase>{error.reason.phrase}</ReasonPhrase>
+        </Set>
+    </FaultResponse>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>

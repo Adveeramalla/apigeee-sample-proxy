@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault async="false" continueOnError="false" enabled="true" name="RF-MissingHeader">
+    <FaultResponse>
+        <Set>
+            <Headers/>
+            <Payload contentType="application/json">
+            {
+              "status" : "ERROR",
+              "referenceId" : "{referenceId}",
+              "errorCode" : "401",
+              "errorDescription":"Missing JWT Barer Token"
+            }    
+            </Payload>
+            <StatusCode>401</StatusCode>
+            <ReasonPhrase>Missing JWT Barer Token</ReasonPhrase>
+        </Set>
+    </FaultResponse>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>
